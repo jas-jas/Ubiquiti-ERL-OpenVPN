@@ -75,7 +75,9 @@ Hit the ESC key and type :wq
     save
 
 NOTE: replace your interface with interface your network is on.. i.e. eth0, eth1, eth2, switch etc
+
 So if your network is on eth2, then change the last line above to be:
+
 set interfaces ethernet eth2 firewall in modify pia_route
 
 ------------------------
@@ -93,7 +95,9 @@ to
     set service nat rule 5001 source address 192.168.1.5/31
 
 On the ERL Dashboard, you should now see the newly created interface (vtun0) showing connected
+
 Test to see if the network or individual system is going out the VPN.
+
 A couple of ways is to use a web browser and go to:
 
     https://ifconfig.me
