@@ -4,31 +4,38 @@ Configuration for setting up OpenVPN for PIA
 ## Steps to set up OpenVPN on a ERL for PIA - Possibly work for other VPNs ##
 
 Download the .zip file directly from PIA - Latest URL is here:
-https://www.privateinternetaccess.com/openvpn/openvpn.zip
+
+    https://www.privateinternetaccess.com/openvpn/openvpn.zip
 
 Download WinSCP, connect to your ERL and then upload the following files in the zip file to your ERL to this remote path /config/auth 
-ca.rsa.2048.crt
-ca.rsa.2048.pem
-*.ovpn (pick the configuration file you want to use and upload it)
+    
+    ca.rsa.2048.crt
+    ca.rsa.2048.pem
+    *.ovpn (pick the configuration file you want to use and upload it)
 
 SSH into your ERL and run the following commands
-sudo su
-cd /config/auth
+
+    sudo su
+    cd /config/auth
 vi *.ovpn (replace with the name of the *.ovpn you picked, example Austria.ovpn
-vi Austria.ovpn
+
+    vi Austria.ovpn
 hit i < to enter edit mode
 when you find auth-user-pass line, make it look like the line below
-auth-user-pass /config/auth/userpass.txt
+
+    auth-user-pass /config/auth/userpass.txt
 Hit the ESC key and type :wq
 This will write the file and then quit out of vi
 Next create the file userpass.txt
-vi userpass.txt
+
+    vi userpass.txt
 You can retrieve your PIA PPTP/L2TP/SOCKS Username and Password by logging into PIA online, selecting My Account and scrolling down.
 You will see PPTP/L2TP/SOCKS Username and Password.
 On two lines put your PIA PPT/L2TP/Socks Username on the first line and on the second line put the Password
 Example of what iw should look like in the userpass.txt file you creatd in /config/auth directory on the ERL:
-x29283933333
-WidD92F398msb
+
+    x29283933333
+    WidD92F398msb
 Hit the ESC key and type :wq
 
 ## Configuration lines to add to the ERL ##
