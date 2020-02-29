@@ -29,10 +29,15 @@ This will write the file and then quit out of vi
 Next create the file userpass.txt
 
     vi userpass.txt
-You can retrieve your PIA PPTP/L2TP/SOCKS Username and Password by logging into PIA online, selecting My Account and scrolling down.
-You will see PPTP/L2TP/SOCKS Username and Password.
+You can retrieve your PIA PPTP/L2TP/SOCKS Username and Password by logging into PIA online and select:
+
+    My Account; continue crolling down.
+Locate:
+
+    PPTP/L2TP/SOCKS Username and Password.
 On two lines put your PIA PPT/L2TP/Socks Username on the first line and on the second line put the Password
-Example of what iw should look like in the userpass.txt file you creatd in /config/auth directory on the ERL:
+
+Example of what it should look like in the userpass.txt file you creatd in /config/auth directory on the ERL:
 
     x29283933333
     WidD92F398msb
