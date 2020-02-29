@@ -92,7 +92,7 @@ to
     set service nat rule 5000 source address 192.168.1.5/31
     set service nat rule 5001 source address 192.168.1.5/31
 
-On the ERL Dashboard, you should now see the newly created interface which should be connected
+On the ERL Dashboard, you should now see the newly created interface (vtun0) showing connected
 Test to see if the network or individual system is going out the VPN.
 A couple of ways is to use a web browser and go to:
 
