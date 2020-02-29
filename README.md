@@ -1,4 +1,4 @@
-# Ubituiti-ERL-OpenVPN
+# Ubiquiti Edgerouter (ERL) OpenVPN setting #
 Configuration for setting up OpenVPN for PIA
 
 ## Steps to set up OpenVPN on a ERL for PIA - Possibly work for other VPNs ##
