@@ -33,7 +33,7 @@ Hit the ESC key and type :wq
 
 ## Configuration lines to add to the ERL ##
 
-configure
+    configure
 
 set interfaces openvpn vtun0 config-file /config/auth/East.ovpn
 set interfaces openvpn vtun0 description 'Private Internet Access'
