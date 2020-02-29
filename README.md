@@ -69,14 +69,17 @@ set interfaces ethernet eth2 firewall in modify pia_route
 ------------------------
 
 If you want to have only 1 IP go through the VPN, then do exactly the same above, but change the two lines:
-set service nat rule 5000 source address 192.168.1.0/24
-set service nat rule 5001 source address 192.168.1.0/24
+    set service nat rule 5000 source address 192.168.1.0/24
+    set service nat rule 5001 source address 192.168.1.0/24
 to
-set service nat rule 5000 source address 192.168.1.5/31
-set service nat rule 5001 source address 192.168.1.5/31
+    set service nat rule 5000 source address 192.168.1.5/31
+    set service nat rule 5001 source address 192.168.1.5/31
 
 On the ERL Dashboard, you should now see the newly created interface which should be connected
 Test to see if the network or individual system is going out the VPN.
-A couple of ways is to use a web browser and go to https://ifconfig.me or if you are SSH'd into a shell run: curl ifconfig.me
+A couple of ways is to use a web browser and go to:
+    https://ifconfig.me
+If you are SSH'd into a shell run:
+    curl ifconfig.me
 This will display your external IP, which you should be able to determine if it's your normal assigned ISP IP or the VPN IP.
 
