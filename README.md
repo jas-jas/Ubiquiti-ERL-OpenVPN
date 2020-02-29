@@ -80,7 +80,9 @@ set interfaces ethernet eth2 firewall in modify pia_route
 
 ------------------------
 
-If you want to have only 1 IP go through the VPN, then do exactly the same above, but change the two lines:
+If you want to have only 1 IP go through the VPN such as your Kodi Box or your Torrent box
+
+Do all of the steps above, except replace the following two lines:
 
     set service nat rule 5000 source address 192.168.1.0/24
     set service nat rule 5001 source address 192.168.1.0/24
