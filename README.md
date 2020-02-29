@@ -35,32 +35,32 @@ Hit the ESC key and type :wq
 
     configure
 
-set interfaces openvpn vtun0 config-file /config/auth/East.ovpn
-set interfaces openvpn vtun0 description 'Private Internet Access'
-set interfaces openvpn vtun0 enable
+    set interfaces openvpn vtun0 config-file /config/auth/East.ovpn
+    set interfaces openvpn vtun0 description 'Private Internet Access'
+    set interfaces openvpn vtun0 enable
 
-set service nat rule 5000 description PIA
-set service nat rule 5000 log disable
-set service nat rule 5000 outbound-interface vtun0
-set service nat rule 5000 source address 192.168.1.0/24
-set service nat rule 5000 type masquerade
+    set service nat rule 5000 description PIA
+    set service nat rule 5000 log disable
+    set service nat rule 5000 outbound-interface vtun0
+    set service nat rule 5000 source address 192.168.1.0/24
+    set service nat rule 5000 type masquerade
 
-set service nat rule 5001 description default
-set service nat rule 5001 log disable
-set service nat rule 5001 outbound-interface eth0
-set service nat rule 5001 source address 192.168.1.0/24
-set service nat rule 5001 type masquerade
+    set service nat rule 5001 description default
+    set service nat rule 5001 log disable
+    set service nat rule 5001 outbound-interface eth0
+    set service nat rule 5001 source address 192.168.1.0/24
+    set service nat rule 5001 type masquerade
 
-set protocols static table 1 interface-route 0.0.0.0/0 next-hop-interface vtun0
+    set protocols static table 1 interface-route 0.0.0.0/0 next-hop-interface vtun0
 
-set firewall modify pia_route rule 10 description 'PIA'
-set firewall modify pia_route rule 10 source address 192.168.1.5/32
-set firewall modify pia_route rule 10 modify table 1
+    set firewall modify pia_route rule 10 description 'PIA'
+    set firewall modify pia_route rule 10 source address 192.168.1.5/32
+    set firewall modify pia_route rule 10 modify table 1
 
-set interfaces ethernet eth1 firewall in modify pia_route
+    set interfaces ethernet eth1 firewall in modify pia_route
 
-commit
-save
+    commit
+    save
 
 NOTE: replace your interface with interface your network is on.. i.e. eth0, eth1, eth2, switch etc
 So if your network is on eth2, then change the last line above to be:
