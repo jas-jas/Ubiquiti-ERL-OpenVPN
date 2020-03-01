@@ -74,9 +74,9 @@ Hit the ESC key and type :wq
     commit
     save
 
-NOTE: replace your interface with interface your network is on.. i.e. eth0, eth1, eth2, switch etc
+NOTE: eth0 is the WAN (Internet) interface. eth1 is the LAN interfae for 192.168.1.0/24 network
 
-So if your network is on eth2, then change the last line above to be:
+If your LAN network is on eth2, you would change the last entry above to read:
 
 set interfaces ethernet eth2 firewall in modify pia_route
 
