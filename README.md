@@ -24,6 +24,13 @@ hit i < to enter edit mode
 when you find auth-user-pass line, make it look like the line below
 
     auth-user-pass /config/auth/userpass.txt
+    
+ Also you need to add to the end of your *.ovpn file one more entry
+     
+     route-nopull
+     
+This stops the VPN in this case PIA from adding it's on routes, and uses the routing table we configured on the ER.
+
 Hit the ESC key and type :wq
 This will write the file and then quit out of vi
 Next create the file userpass.txt
@@ -93,11 +100,7 @@ to
 
     set service nat rule 5000 source address 192.168.1.5/31
     set service nat rule 5001 source address 192.168.1.5/31
-    
- Also you will need to add to the end of your *.ovpn file one more entry
-     
-     route-nopull
- 
+      
 On the ERL Dashboard, you should now see the newly created interface (vtun0) showing connected
 
 Test to see if the network or individual system is going out the VPN.
