@@ -38,7 +38,7 @@ Next create the file userpass.txt
     vi userpass.txt
 You can retrieve your PIA PPTP/L2TP/SOCKS Username and Password by logging into PIA online and select:
 
-    My Account; continue crolling down.
+    My Account; continue scrolling down.
 Locate:
 
     PPTP/L2TP/SOCKS Username and Password.
