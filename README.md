@@ -50,7 +50,8 @@ Create the file userpass.txt
 
     x29283933333
     WidD92F398msb
-Hit the ESC key and type :wq
+    
+    Hit the ESC key and type :wq
 
 ## Configuration lines to add to the ERL ##
 
