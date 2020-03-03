@@ -53,6 +53,7 @@ Example of what your Username and Password looks like.
     x29283933333
     WidD92F398msb
     
+__________________________________________________
     Hit the ESC key and type :wq
 
 ## Configuration lines to add to the ERL ##
