@@ -48,6 +48,8 @@ Create the file userpass.txt
     vi userpass.txt
     hit i < to enter edit mode
 
+Example of what your Username and Password looks like.
+    
     x29283933333
     WidD92F398msb
     
