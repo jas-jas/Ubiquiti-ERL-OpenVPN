@@ -33,9 +33,7 @@ This stops the VPN in this case PIA from adding it's on routes, and uses the rou
 
 Hit the ESC key and type :wq
 This will write the file and then quit out of vi
-Next create the file userpass.txt
 
-    vi userpass.txt
 You can retrieve your PIA PPTP/L2TP/SOCKS Username and Password by logging into PIA online and select:
 
     My Account; continue scrolling down.
@@ -45,6 +43,10 @@ Locate:
 On two lines put your PIA PPT/L2TP/Socks Username on the first line and on the second line put the Password
 
 Example of what it should look like in the userpass.txt file you creatd in /config/auth directory on the ERL:
+Create the file userpass.txt
+
+    vi userpass.txt
+    hit i < to enter edit mode
 
     x29283933333
     WidD92F398msb
@@ -81,7 +83,7 @@ Hit the ESC key and type :wq
     commit
     save
 
-NOTE: eth0 is the WAN (Internet) interface. eth1 is the LAN interfae for 192.168.1.0/24 network
+NOTE: eth0 is the WAN (Internet) interface. eth1 is the LAN interface for 192.168.1.0/24 network
 
 If your LAN network is on eth2, you would change the last entry above to read:
 
