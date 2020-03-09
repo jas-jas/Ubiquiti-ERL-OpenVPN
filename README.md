@@ -103,10 +103,10 @@ __________________________
 
 **These are the needed steps to route traffic to the appropriate interfaces**
 
-**eth0 = WAN (Internet)**
-**eth1 = 192.168.1.0/24**
-**eth2 = 192.168.10.0/24**
-**The streaming data from 192.168.10.220 is stored at 192.168.1.5/32 and is routed via eth1**
+* eth0 = WAN (Internet) *
+* eth1 = 192.168.1.0/24 *
+* eth2 = 192.168.10.0/24 *
+* The streaming data from 192.168.10.220 is stored at 192.168.1.5/32 and is routed via eth1 *
 
 **NAS 192.168.1.5 eth1 to PoE Camera 192.168.10.220 eth2**
 **Notice this is table 1 as we set it up to use eth1**
@@ -159,7 +159,7 @@ __________________________
     set firewall modify pia_route rule 50 source port 123
 
 **NAS 192.168.1.5 eth1 to all other traffic not listed above through vtun0 (PIA VPN)**
-**Notice this is table 3, as we switched from eth0 interface to vtun0**
+* Notice this is table 3, as we switched from eth0 interface to vtun0 *
     
     set protocols static table 3 interface-route 0.0.0.0/0 next-hop-interface vtun0
     set firewall modify pia_route rule 60 description 'PIA Route to vtun0'
