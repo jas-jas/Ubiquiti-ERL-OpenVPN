@@ -120,17 +120,18 @@ If you are SSH'd into a shell run:
     curl ifconfig.me
 This will display your external IP, which you should be able to determine if it's your normal assigned ISP IP or the VPN IP.
 
-
+__________________________
+### Added March 8th ###
 # Continue to route local networks without going out vtun0 #
 If you don't enable these steps, all your traffic will continue to go out vtun0.
 
-## These are the needed steps to route traffic to the appropriate interfaces ##
+### These are the needed steps to route traffic to the appropriate interfaces ###
 
-## eth0 = WAN (Internt)   eth1 = 192.168.1.0/24    eth2 = 192.168.10.0/24
-## The streaming data from 192.168.10.220 is stored at 192.168.1.5/32 and is routed via eth1 
+### eth0 = WAN (Internt)   eth1 = 192.168.1.0/24    eth2 = 192.168.10.0/24 ###
+### The streaming data from 192.168.10.220 is stored at 192.168.1.5/32 and is routed via eth1 ###
 
-## NAS 192.168.1.5 eth1 to PoE Camera 192.168.10.220 eth2
-## Notice this is table 1 as we set it up to use eth1
+### NAS 192.168.1.5 eth1 to PoE Camera 192.168.10.220 eth2 ###
+### Notice this is table 1 as we set it up to use eth1 ###
     set protocols static table 1 interface-route 0.0.0.0/0 next-hop-interface eth1
     set firewall modify pia_route rule 10 description 'Camera 220'
     set firewall modify pia_route rule 10 source address 192.168.1.5/32
