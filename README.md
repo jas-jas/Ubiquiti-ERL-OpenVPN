@@ -110,6 +110,7 @@ __________________________
 
 **NAS 192.168.1.5 eth1 to PoE Camera 192.168.10.220 eth2**
 **Notice this is table 1 as we set it up to use eth1**
+    
     set protocols static table 1 interface-route 0.0.0.0/0 next-hop-interface eth1
     set firewall modify pia_route rule 10 description 'Camera 220'
     set firewall modify pia_route rule 10 source address 192.168.1.5/32
@@ -119,6 +120,7 @@ __________________________
     set firewall modify pia_route rule 10 action modify
 
 **NAS 192.168.1.5 eth1 to PoE Camera 192.168.10.221 eth2**
+    
     set protocols static table 1 interface-route 0.0.0.0/0 next-hop-interface eth1
     set firewall modify pia_route rule 20 description 'Camera 221'
     set firewall modify pia_route rule 20 source address 192.168.1.5/32
@@ -127,6 +129,7 @@ __________________________
     set firewall modify pia_route rule 20 action modify
 
 **NAS 192.168.1.5 eth1 to LAN on eth1 192.168.1.0/24**
+
     set protocols static table 1 interface-route 0.0.0.0/0 next-hop-interface eth1
     set firewall modify pia_route rule 30 description 'Local NAS to LAN'
     set firewall modify pia_route rule 30 source address 192.168.1.5/32
@@ -136,6 +139,7 @@ __________________________
 
 **NAS 192.168.1.5 eth1 to external DSN via eth0 (WAN)**
 **Notice this is table 2, as we switched from eth1 interface to eth0**
+    
     set protocols static table 2 interface-route 0.0.0.0/0 next-hop-interface eth0
     set firewall modify pia_route rule 40 description 'External DNS'
     set firewall modify pia_route rule 40 source address 192.168.1.5/32
@@ -145,6 +149,7 @@ __________________________
     set firewall modify pia_route rule 40 action modify   
 
 **NAS 192.168.1.5 eth1 to external DSN via eth0 (WAN)**
+    
     set firewall modify pia_route rule 50 action modify
     set firewall modify pia_route rule 50 description 'External NTP'
     set firewall modify pia_route rule 50 destination port 123
@@ -155,6 +160,7 @@ __________________________
 
 **NAS 192.168.1.5 eth1 to all other traffic not listed above through vtun0 (PIA VPN)**
 **Notice this is table 3, as we switched from eth0 interface to vtun0**
+    
     set protocols static table 3 interface-route 0.0.0.0/0 next-hop-interface vtun0
     set firewall modify pia_route rule 60 description 'PIA Route to vtun0'
     set firewall modify pia_route rule 60 source address 192.168.1.5/32
@@ -163,12 +169,14 @@ __________________________
     set firewall modify pia_route rule 60 action modify
 
 **To get an output which you can paste into the router which are the actual commands run the following:**
+    
     show configuration commands
     
     You can also grep somethign on the end if you are looking for a specific command(s)
     show configuration commands | grep pia_route
   
 **To view your firewall logs, I normally do this:**
+    
     tail -f -n 50 /var/logs/messages
     
     This will show you the last 50 lines of the /var/log/messages and tail it or stream it so you can watch in real-time
