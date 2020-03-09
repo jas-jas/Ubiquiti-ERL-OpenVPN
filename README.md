@@ -109,6 +109,7 @@ __________________________
 * The streaming data from 192.168.10.220 is stored at 192.168.1.5/32 and is routed via eth1
 
 **NAS 192.168.1.5 eth1 to PoE Camera 192.168.10.220 eth2**
+
 **Notice this is table 1 as we set it up to use eth1**
     
     set protocols static table 1 interface-route 0.0.0.0/0 next-hop-interface eth1
@@ -138,6 +139,7 @@ __________________________
     set firewall modify pia_route rule 30 action modify   
 
 **NAS 192.168.1.5 eth1 to external DNS via eth0 (WAN)**
+
 **Notice this is table 2, as we switched from eth1 interface to eth0**
     
     set protocols static table 2 interface-route 0.0.0.0/0 next-hop-interface eth0
@@ -159,6 +161,7 @@ __________________________
     set firewall modify pia_route rule 50 source port 123
     
 **NAS 192.168.1.5 eth1 to external FTP via eth0 (WAN)**
+
 **I have a script running to upload a file to a remote FTP server every 30 mins, and I needed this rule**
     
     set firewall modify pia_route rule 60 action modify
@@ -197,4 +200,20 @@ __________________________
     Example:
     Mar  8 21:16:30 ubnt kernel: [WAN_LOCAL-default-D]IN=eth0 OUT= MAC=fc:dc:dd:24:22:f7:00:3d:45:42:83:19:08:00 SRC=55.177.77.154 DST=44.10.100.101 LEN=40 TOS=0x00 PREC=0x00 TTL=243 ID=54321 PROTO=TCP SPT=56057 DPT=443 WINDOW=65535 RES=0x00 SYN URGP=0
     
-    This is someone trying to reach my external interface to probe my system, which in this case is eth0 (WAN/Internet) of device
+This is someone trying to reach my external interface to probe my system, which in this case is eth0 (WAN/Internet) of device
+    
+If you want to search for something in the entire logs you can do this
+    
+    less /var/log/messages | grep pia_route
+
+or you can tail the log as well as look through more lines
+    
+    tail -f -n 1000 /var/log/messages | grep pia_route
+    
+The line above will stream the messages log while looking for anything matching pia_route
+You could also do
+
+    tail -f -n 1000 /var/log/messages | grep DPT=21
+
+This would look for anything going to port 21 on the destination end
+    
