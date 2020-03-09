@@ -121,8 +121,8 @@ If you are SSH'd into a shell run:
 This will display your external IP, which you should be able to determine if it's your normal assigned ISP IP or the VPN IP.
 
 __________________________
-##### Added March 8th #####
-##### Continue to route local networks without going out vtun0 #####
+**Added March 8th**
+### Continue to route local networks without going out vtun0 ###
 ##### If you don't enable these steps, all your traffic will continue to go out vtun0 #####
 
 ##### These are the needed steps to route traffic to the appropriate interfaces #####
